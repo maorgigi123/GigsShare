@@ -1,0 +1,46 @@
+# Node.js dependencies
+/node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.* 
+
+# Directory for dotenv files
+/.env/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# npm package-lock and yarn lock files
+package-lock.json
+yarn.lock
+
+# Build output (if using build tools like Webpack or Babel)
+dist/
+build/
+
+# Coverage reports
+coverage/
+
+# Temporary files from editor
+*.swp
+*.swo
+
+# IDE settings (e.g., VS Code, WebStorm)
+.vscode/
+.idea/
+
+# Testing files (if using Jest, Mocha, etc.)
+/test
+*.test.js
+*.spec.js
+
+.git
