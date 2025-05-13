@@ -1,0 +1,141 @@
+{
+  "isError": false,
+  "messageCode": 0,
+  "messageDesc": "",
+  "languageMeta": {
+    "code": "zh",
+    "isRTL": false
+  },
+  "data": {
+    "content": {
+      "layout": {
+        "header": {
+          "goodMorning": "早上好",
+          "goodNoon": "中午好",
+          "goodAfternoon": "下午好",
+          "goodEvening": "晚上好",
+          "goodNight": "晚安",
+          "hello": "欢迎回来 :)",
+          "welcome": "欢迎！",
+          "theme": "主题颜色"
+        }
+      },
+      "common": {
+        "next": "下一步",
+        "days": {
+          "0": "星期日",
+          "1": "星期一",
+          "2": "星期二",
+          "3": "星期三",
+          "4": "星期四",
+          "5": "星期五",
+          "6": "星期六"
+        },
+        "cancel": "取消"
+      },
+      "explore": {
+        "searchTitle": "你想租什么？",
+        "searchSubtitle": "搜索工具、家具、运动设备等"
+      },
+      "categories": {
+        "trend": { "name": "热门", "icon": "local-fire-department" },
+        "camera": { "name": "摄影设备", "icon": "camera" },
+        "sports": { "name": "运动器材", "icon": "sports-handball" },
+        "music": { "name": "乐器", "icon": "music-note" },
+        "celebration": { "name": "派对用品", "icon": "celebration" },
+        "boat": { "name": "船只和水上运动", "icon": "directions-boat" },
+        "build": { "name": "工具和机械", "icon": "build" },
+        "snowboard": { "name": "冬季运动器材", "icon": "snowboarding" },
+        "hiking": { "name": "露营与徒步", "icon": "hiking" },
+        "electronics": { "name": "电子产品", "icon": "devices" }
+      },
+      "HomePage": {
+        "title": "在此注册 Packer 应用"
+      },
+      "errorPage": {
+        "title": "发生错误",
+        "subTitle": "好像出了点问题，请重试",
+        "toMainPageButton": "再试一次"
+      },
+      "login": {
+        "title": "登录",
+        "subtitle": "请输入您的登录信息",
+        "emailPlaceholder": "电子邮箱地址",
+        "passwordPlaceholder": "密码",
+        "loginButton": "登录",
+        "forgotPassword": "忘记密码？",
+        "signUpLink": "还没有账号？点击注册"
+      },
+      "register": {
+        "title": "注册",
+        "subtitle": "创建新账户以继续",
+        "emailPlaceholder": "请输入电子邮箱",
+        "usernamePlaceholder": "请输入用户名",
+        "passwordPlaceholder": "请输入密码",
+        "confirmPasswordPlaceholder": "确认密码",
+        "registerButton": "注册",
+        "loginLink": "已有账户？点击登录",
+        "phonePlaceholder": "请输入手机号",
+        "locationPlaceholder": "请输入居住地址"
+      },
+      "bottomTabs": {
+        "Explore": "地图",
+        "RENTAL": "租赁",
+        "Messages": "消息",
+        "Profile": "个人资料",
+        "SEARCH": "搜索"
+      },
+      "addPost": {
+        "Categories": {
+          "title": "选择分类"
+        },
+        "ProductDetails": {
+          "title": "产品详情",
+          "nameItem": "产品名称",
+          "nameItemPlaceHolder": "例如：自行车、洗衣机",
+          "DetailsItem": "描述",
+          "DetailsItemPlaceHolder": "描述该物品",
+          "PriceItem": "每小时价格",
+          "PriceItemPlaceHolder": "每小时价格"
+        },
+        "Availability": {
+          "title": "可用时间设置",
+          "optional": "可选",
+          "startHour": "开始时间",
+          "endHour": "结束时间"
+        },
+        "images": {
+          "title": "图片",
+          "mainImage": "主图",
+          "selectImage": "上传图片",
+          "addMore": "添加更多图片",
+          "selectSource": "选择图片来源",
+          "camera": "相机",
+          "gallery": "图库"
+        }
+      },
+      "profile": {
+        "username": "Maor Gigi",
+        "bio": "热爱技术的开发者",
+        "description": "欢迎来到我的个人资料！我热爱开发应用并探索新技术，欢迎联系我！",
+        "editProfile": "编辑资料",
+        "logout": "退出登录",
+        "changeTheme": "更改主题",
+        "postItem": "添加商品",
+        "ChangeDir": "更改语言",
+        "stat1": {
+          "title": "关注者",
+          "value": "120K"
+        },
+        "stat2": {
+          "title": "关注中",
+          "value": "500"
+        },
+        "stat3": {
+          "title": "帖子",
+          "value": "240"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "isError": false,
+  "messageCode": 0,
+  "messageDesc": "",
+  "languageMeta": {
+    "code": "en",
+    "isRTL": false
+  },
+  "data": {
+    "content": {
+      "languageMeta": {
+        "code": "en",
+        "currency": "USD",
+        "currencySymbol": "$",
+        "currencyValue": 1
+      },
+      "layout": {
+        "header": {
+          "goodMorning": "Good morning",
+          "goodNoon": "Good noon",
+          "goodAfternoon": "Good afternoon",
+          "goodEvening": "Good evening",
+          "goodNight": "Good night",
+          "hello": "Nice to have you back :)",
+          "welcome": "Welcome!",
+          "theme": "Theme color"
+        }
+      },
+      "common": {
+        "next": "Next",
+        "days": {
+          "0": "Sunday",
+          "1": "Monday",
+          "2": "Tuesday",
+          "3": "Wednesday",
+          "4": "Thursday",
+          "5": "Friday",
+          "6": "Saturday"
+        },
+        "cancel": "Cancel",
+        "back": "Back",
+        "yes": "Yes",
+        "no": "No"
+      },
+      "explore": {
+        "searchTitle": "What do you want to rent?",
+        "searchSubtitle": "Search for tools, furniture, sports equipment and more"
+      },
+      "categories": {
+        "trend": {"id":1,"name": "Trends", "icon": "local-fire-department" },
+        "camera": {"id":2,"name": "Photography Equipment", "icon": "camera" },
+        "sports": {"id":3,"name": "Sports Equipment", "icon": "sports-handball" },
+        "music": {"id":4,"name": "Musical Instruments", "icon": "music-note" },
+        "celebration": {"id":5,"name": "Party Accessories", "icon": "celebration" },
+        "boat": {"id":6,"name": "Boats and Water Sports", "icon": "directions-boat" },
+        "build": {"id":7,"name": "Tools and Machines", "icon": "build" },
+        "snowboard": {"id":8,"name": "Winter Sports Gear", "icon": "snowboarding" },
+        "hiking": {"id":9,"name": "Camping and Hiking", "icon": "hiking" },
+        "electronics": {"id":10,"name": "Electronics", "icon": "devices" }
+      },
+      "HomePage": {
+        "title": "Register to the Packer app"
+      },
+      "errorPage": {
+        "title": "Oops, there's an error",
+        "subTitle": "An error probably occurred. Please try again.",
+        "toMainPageButton": "Try again"
+      },
+      "login": {
+        "title": "Login",
+        "subtitle": "Please enter your login details",
+        "emailPlaceholder": "Email address",
+        "passwordPlaceholder": "Password",
+        "loginButton": "Log in",
+        "forgotPassword": "Forgot password?",
+        "signUpLink": "Don't have an account? Register here"
+      },
+      "register": {
+        "title": "Register",
+        "subtitle": "Create a new account to continue",
+        "emailPlaceholder": "Enter your email address",
+        "usernamePlaceholder": "Enter username",
+        "passwordPlaceholder": "Enter password",
+        "confirmPasswordPlaceholder": "Confirm password",
+        "registerButton": "Register",
+        "loginLink": "Already have an account? Log in here",
+        "phonePlaceholder": "Enter phone number",
+        "locationPlaceholder": "Enter your location"
+      },
+      "bottomTabs": {
+        "Explore": "Map",
+        "RENTAL": "Rentals",
+        "Messages": "Messages",
+        "Profile": "Profile",
+        "SEARCH": "Search"
+      },
+      "addPost": {
+        "Categories": {
+          "title": "Select Categories",
+          "maxSelectionError": "You can select up to 3 categories only",
+          "selectAtLeastOne": "Please select at least one category"
+        },
+        "ProductDetails": {
+          "title": "Product Details",
+          "nameItem": "Product Name",
+          "nameItemPlaceHolder": "Example: Bicycle, Washing Machine",
+          "DetailsItem": "Description",
+          "DetailsItemPlaceHolder": "Description of the item",
+          "PriceItem": "Price per hour",
+          "PriceItemPlaceHolder": "Item price per hour",
+          "nameRequired": "Please enter product name",
+          "descriptionRequired": "Please enter product description",
+          "priceRequired": "Please enter a price per hour",
+          "priceIntegerOnly": "Price must be an integer (no decimal point)",
+          "priceTooHigh": "Price cannot exceed 5000"
+        },
+        "Availability": {
+          "title": "Set Availability",
+          "optional": "Optional",
+          "startHour": "Start hour",
+          "endHour": "End hour",
+          "allDay": "Available all day",
+          "cancelAllDay": "Cancel full availability",
+          "mustSelectOneDay": "Please select at least one day with valid availability"
+        },
+        "Cancellation": {
+          "title": "Select Cancellation Policy",
+          "flexible": "Flexible – Free cancellation up to 24 hours in advance",
+          "moderate": "Moderate – Free up to 48 hours or 50% refund",
+          "strict": "Strict – No refunds",
+          "custom": "Custom",
+          "customPlaceholder": "Enter custom cancellation terms",
+          "errorSelectPolicy": "Please select a cancellation policy",
+          "errorEnterCustomText": "Please enter your custom cancellation terms"
+        },
+        "DamagePolicy": {
+          "title": "Damage Responsibility",
+          "askDeposit": "Is a deposit required from the renter?",
+          "conditions": "Terms / Notes",
+          "conditionsPlaceholder": "Add any damage-related conditions or restrictions",
+          "depositPlaceholder": "Enter deposit amount in",
+          "noDeposit": "No deposit",
+          "errorDepositAmount": "Please enter a valid deposit amount",
+          "errorPolicyText": "Please fill in the damage responsibility terms",
+          "errorDepositTooHigh": "The deposit amount cannot exceed 5000{{currencySymbol}}"
+        },
+        "Logistics": {
+          "title": "Location and Pickup",
+          "address": "Product Address",
+          "addressPlaceholder": "Example: Tel Aviv, Dizengoff St. 10",
+          "method": "Delivery Method",
+          "pickup": "Self Pickup",
+          "delivery": "Delivery",
+          "deliveryPrice": "Delivery price in",
+          "errorAddress": "Please enter the product address",
+          "errorDeliveryPrice": "Please enter a valid delivery price",
+          "errorDeliveryPriceTooHigh": "Delivery price cannot exceed 5000{{currencySymbol}}"
+        },
+        "images": {
+          "title": "Images",
+          "mainImage": "Product Image",
+          "selectImage": "Upload Image",
+          "addMore": "Add More Images",
+          "selectSource": "Select Image Source",
+          "camera": "Camera",
+          "gallery": "Gallery",
+          "errorRequired": "Please upload at least one image"
+        },
+        "Review": {
+          "title": "Final Review",
+          "publish": "Publish Product",
+          "back": "Back to Edit"
+        }
+      },
+      "profile": {
+        "username": "Maor Gigi",
+        "bio": "A passionate developer and tech enthusiast.",
+        "description": "Welcome to my profile! I love building apps and exploring new technologies. Feel free to reach out!",
+        "editProfile": "Edit Profile",
+        "logout": "Logout",
+        "changeTheme": "Change Theme",
+        "postItem": "Add Product",
+        "ChangeDir": "Change Language",
+        "stat1": {
+          "title": "Followers",
+          "value": "120K"
+        },
+        "stat2": {
+          "title": "Following",
+          "value": "500"
+        },
+        "stat3": {
+          "title": "Posts",
+          "value": "240"
+        }
+      }
+    }
+  }
+}   

@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "nodemon --exec ts-node src/server.ts",
-    "start": "node dist/server.js",
+    "start": "nodemon --exec ts-node src/server.ts",
     "build": "tsc"
   },
   "dependencies": {
@@ -11,16 +11,23 @@
     "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "^22.13.10",
     "bcrypt": "^5.1.1",
+    "cloudinary": "^2.6.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "express-fileupload": "^1.5.1",
+    "firebase-admin": "^13.2.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.12.1",
+    "multer": "^1.4.5-lts.2",
+    "multer-storage-cloudinary": "^4.0.0",
     "nodemon": "^3.1.9",
     "ts-node": "^10.9.2"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
+    "@types/express-fileupload": "^1.5.1",
     "typescript": "^5.8.2"
-  }
+  },
+  "packageManager": "yarn@3.6.1+sha512.de524adec81a6c3d7a26d936d439d2832e351cdfc5728f9d91f3fc85dd20b04391c038e9b4ecab11cae2b0dd9f0d55fd355af766bc5c1a7f8d25d96bb2a0b2ca"
 }

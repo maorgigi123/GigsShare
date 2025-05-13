@@ -1,0 +1,141 @@
+{
+  "isError": false,
+  "messageCode": 0,
+  "messageDesc": "",
+  "languageMeta": {
+    "code": "ar",
+    "isRTL": true
+  },
+  "data": {
+    "content": {
+      "layout": {
+        "header": {
+          "goodMorning": "صباح الخير",
+          "goodNoon": "ظهر سعيد",
+          "goodAfternoon": "مساء الخير",
+          "goodEvening": "مساء الخير",
+          "goodNight": "تصبح على خير",
+          "hello": "سعيدون بعودتك :)",
+          "welcome": "مرحبًا بك!",
+          "theme": "لون الواجهة"
+        }
+      },
+      "common": {
+        "next": "التالي",
+        "days": {
+          "0": "الأحد",
+          "1": "الاثنين",
+          "2": "الثلاثاء",
+          "3": "الأربعاء",
+          "4": "الخميس",
+          "5": "الجمعة",
+          "6": "السبت"
+        },
+        "cancel": "إلغاء"
+      },
+      "explore": {
+        "searchTitle": "ماذا تريد أن تستأجر؟",
+        "searchSubtitle": "ابحث عن أدوات، أثاث، معدات رياضية والمزيد"
+      },
+      "categories": {
+        "trend": { "name": "الصيحات", "icon": "local-fire-department" },
+        "camera": { "name": "معدات تصوير", "icon": "camera" },
+        "sports": { "name": "معدات رياضية", "icon": "sports-handball" },
+        "music": { "name": "آلات موسيقية", "icon": "music-note" },
+        "celebration": { "name": "مستلزمات حفلات", "icon": "celebration" },
+        "boat": { "name": "قوارب ورياضات مائية", "icon": "directions-boat" },
+        "build": { "name": "أدوات وآلات", "icon": "build" },
+        "snowboard": { "name": "معدات رياضة شتوية", "icon": "snowboarding" },
+        "hiking": { "name": "تخييم ورحلات", "icon": "hiking" },
+        "electronics": { "name": "إلكترونيات", "icon": "devices" }
+      },
+      "HomePage": {
+        "title": "سجل الآن في تطبيق فاكر"
+      },
+      "errorPage": {
+        "title": "حدث خطأ",
+        "subTitle": "يبدو أن هناك خطأ، حاول مرة أخرى",
+        "toMainPageButton": "حاول مجددًا"
+      },
+      "login": {
+        "title": "تسجيل الدخول",
+        "subtitle": "يرجى إدخال بيانات الدخول",
+        "emailPlaceholder": "عنوان البريد الإلكتروني",
+        "passwordPlaceholder": "كلمة المرور",
+        "loginButton": "تسجيل الدخول",
+        "forgotPassword": "هل نسيت كلمة المرور؟",
+        "signUpLink": "ليس لديك حساب؟ سجل الآن"
+      },
+      "register": {
+        "title": "التسجيل",
+        "subtitle": "أنشئ حسابًا جديدًا للمتابعة",
+        "emailPlaceholder": "أدخل بريدك الإلكتروني",
+        "usernamePlaceholder": "أدخل اسم المستخدم",
+        "passwordPlaceholder": "أدخل كلمة المرور",
+        "confirmPasswordPlaceholder": "تأكيد كلمة المرور",
+        "registerButton": "تسجيل",
+        "loginLink": "لديك حساب؟ سجل دخول",
+        "phonePlaceholder": "أدخل رقم الهاتف",
+        "locationPlaceholder": "أدخل مكان الإقامة"
+      },
+      "bottomTabs": {
+        "Explore": "الخريطة",
+        "RENTAL": "الإيجارات",
+        "Messages": "الرسائل",
+        "Profile": "الملف الشخصي",
+        "SEARCH": "بحث"
+      },
+      "addPost": {
+        "Categories": {
+          "title": "اختر الفئات"
+        },
+        "ProductDetails": {
+          "title": "تفاصيل المنتج",
+          "nameItem": "اسم المنتج",
+          "nameItemPlaceHolder": "مثال: دراجة، غسالة",
+          "DetailsItem": "الوصف",
+          "DetailsItemPlaceHolder": "وصف عن المنتج",
+          "PriceItem": "السعر لكل ساعة",
+          "PriceItemPlaceHolder": "سعر المنتج بالساعة"
+        },
+        "Availability": {
+          "title": "تحديد التوفر",
+          "optional": "اختياري",
+          "startHour": "وقت البدء",
+          "endHour": "وقت الانتهاء"
+        },
+        "images": {
+          "title": "الصور",
+          "mainImage": "صورة المنتج",
+          "selectImage": "رفع صورة",
+          "addMore": "إضافة صور",
+          "selectSource": "اختر مصدر الصورة",
+          "camera": "الكاميرا",
+          "gallery": "المعرض"
+        }
+      },
+      "profile": {
+        "username": "معاور جيجي",
+        "bio": "مطور شغوف ومحب للتقنية.",
+        "description": "مرحبًا بك في ملفي الشخصي! أحب بناء التطبيقات واستكشاف تقنيات جديدة. لا تتردد في التواصل!",
+        "editProfile": "تعديل الملف الشخصي",
+        "logout": "تسجيل الخروج",
+        "changeTheme": "تغيير المظهر",
+        "postItem": "إضافة منتج",
+        "ChangeDir": "تغيير اللغة",
+        "stat1": {
+          "title": "المتابعين",
+          "value": "120K"
+        },
+        "stat2": {
+          "title": "المتابَعين",
+          "value": "500"
+        },
+        "stat3": {
+          "title": "المنشورات",
+          "value": "240"
+        }
+      }
+    }
+  }
+}

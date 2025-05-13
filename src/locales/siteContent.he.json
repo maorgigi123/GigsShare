@@ -1,0 +1,200 @@
+{
+  "isError": false,
+  "messageCode": 0,
+  "messageDesc": "",
+  "languageMeta": {
+    "code": "he",
+    "isRTL": true
+  },
+  "data": {
+       "content": {
+        "languageMeta": {
+          "code": "he",
+          "currency": "ILS",
+          "currencySymbol": "₪",
+          "currencyValue": 3.7
+        },
+        "layout": {
+          "header": {
+            "goodMorning": "בוקר טוב",
+            "goodNoon": "צהריים טובים",
+            "goodAfternoon": "אחרה''צ טובים",
+            "goodEvening": "ערב טוב",
+            "goodNight": "לילה טוב",
+            "hello": "כיף שחזרת אלינו:)",
+            "welcome": "ברוכים הבאים!",
+            "theme" : "צבע תבנית"
+          }
+        },
+        "common": {
+          "next": "המשך",
+          "days": {
+            "0": "ראשון",
+            "1": "שני",
+            "2": "שלישי",
+            "3": "רביעי",
+            "4": "חמישי",
+            "5": "שישי",
+            "6": "שבת"
+          },
+          "cancel":"ביטול",
+          "back": "חזור",
+          "yes": "כן",
+          "no": "לא"
+        },
+        "explore": {
+        "searchTitle": "מה אתה רוצה להשכיר?",
+        "searchSubtitle": "חפש כלי עבודה, רהיטים, ציוד ספורט ועוד"
+      },
+        "categories": {
+          "trend": {"id":1, "name": "טרנדים", "icon": "local-fire-department" },
+          "camera": {"id":2,"name": "ציוד צילום", "icon": "camera" },
+          "sports": {"id":3,"name": "ציוד ספורט", "icon": "sports-handball" },
+          "music": {"id":4,"name": "כלי נגינה", "icon": "music-note" },
+          "celebration": {"id":5, "name": "אביזרים למסיבות", "icon": "celebration" },
+          "boat": {"id":6,"name": "סירות וספורט ימי", "icon": "directions-boat" },
+          "build": {"id":7,"name": "כלים ומכונות", "icon": "build" },
+          "snowboard": {"id":8,"name": "ציוד ספורט חורף", "icon": "snowboarding" },
+          "hiking": {"id":9,"name": "קמפינג וטיולים", "icon": "hiking" },
+          "electronics": {"id":10,"name": "אלקטרוניקה", "icon": "devices" }
+        },        
+        "HomePage" : {
+          "title" : "כאן נרשמים לאפליקציה פאקר"
+        } ,
+        "errorPage" : {
+          "title" : "אופס יש שגיאה",
+          "subTitle" : "כנראה נוצרה שגיאה בבקשה תנסה שוב",
+          "toMainPageButton" : "תנסה שוב"
+        } ,
+        "login": {
+          "title": "התחברות",
+          "subtitle": "אנא הזן את פרטי ההתחברות שלך",
+          "emailPlaceholder": "כתובת אימייל",
+          "passwordPlaceholder": "סיסמה",
+          "loginButton": "התחבר",
+          "forgotPassword": "שכחת סיסמה?",
+          "signUpLink": "אין לך חשבון? הירשם כאן"
+          
+        },
+        "register": {
+          "title": "הרשמה",
+          "subtitle": "צור חשבון חדש כדי להמשיך",
+          "emailPlaceholder": "הזן את כתובת האימייל שלך",
+          "usernamePlaceholder" : "הזן שם משתמש",
+          "passwordPlaceholder": "הזן סיסמה",
+          "confirmPasswordPlaceholder": "אשר את הסיסמה",
+          "registerButton": "הרשמה",
+          "loginLink": "כבר יש לך חשבון? התחבר כאן",
+          "phonePlaceholder" : "הזן מספר פלאפון",
+           "locationPlaceholder" : "הזן מקום מגורים"
+        },
+        "bottomTabs" : {
+         "Explore": "מפה",
+         "RENTAL": "השכרות",
+         "Messages": "הודעות",
+         "Profile": "פרופיל",
+         "SEARCH" : "חיפוש"
+        },
+        "addPost":{
+          "Categories": {
+            "title": "בחר קטגוריות",
+            "maxSelectionError": "ניתן לבחור עד 3 קטגוריות בלבד",
+            "selectAtLeastOne": "יש לבחור לפחות קטגוריה אחת"
+          },
+          "ProductDetails":{
+            "title" : "פרטי מוצר",
+            "nameItem" : "שם מוצר",
+            "nameItemPlaceHolder" : "שם מוצר לדגומא : אופניים , מכונת כביסה",
+            "DetailsItem" : "תיאור",
+            "DetailsItemPlaceHolder" : "תיאור על הפריט",
+            "PriceItem" : "מחיר לשעה",
+            "PriceItemPlaceHolder" : "מחיר פריט לפי שעה",
+            "nameRequired": "הזן שם מוצר",
+            "descriptionRequired": "הזן תיאור מוצר",
+            "priceRequired": "הזן מחיר לשעה",
+            "priceIntegerOnly": "המחיר חייב להיות מספר שלם ללא נקודה",
+            "priceTooHigh": "המחיר לא יכול לעלות על 5000"
+          },
+          "Availability": {
+            "title": "הגדרת זמינות",
+            "optional": "אופציונלי",
+            "startHour": "שעת התחלה",
+            "endHour": "שעת סיום",
+            "allDay": "זמין כל היום",
+            "cancelAllDay": "ביטול זמינות מלאה",
+            "mustSelectOneDay": "יש לבחור לפחות יום אחד עם זמינות תקינה"
+          },
+          "Cancellation": {
+            "title": "בחר מדיניות ביטול",
+            "flexible": "גמישה – ביטול חינם עד 24 שעות מראש",
+            "moderate": "בינונית – ביטול חינם עד 48 שעות או חצי החזר",
+            "strict": "קשוחה – ללא החזרים",
+            "custom": "מותאמת אישית",
+            "customPlaceholder": "הכנס תנאי ביטול מותאמים אישית",
+            "errorSelectPolicy": "יש לבחור מדיניות ביטול",
+            "errorEnterCustomText": "יש למלא תנאים מותאמים אישית"
+          },
+          "DamagePolicy": {
+            "title": "אחריות על נזק",
+            "askDeposit": "האם נדרש פיקדון מהמזכיר?",
+            "conditions": "תנאים / הערות",
+            "conditionsPlaceholder": "הוסף כאן את התנאים או מגבלות הקשורות לנזק",
+            "depositPlaceholder": "הכנס סכום פיקדון",
+            "noDeposit": "ללא פיקדון",
+            "errorDepositAmount": "יש להזין סכום פיקדון תקין",
+            "errorPolicyText": "יש למלא את תנאי האחריות על נזק",
+            "errorDepositTooHigh": "סכום הפיקדון לא יכול להיות גבוה מ־5000{{currencySymbol}}"
+          },
+          "Logistics": {
+            "title": "מיקום ואיסוף",
+            "address": "כתובת המוצר",
+            "addressPlaceholder": "לדוגמה: תל אביב, רחוב דיזנגוף 10",
+            "method": "שיטת אספקה",
+            "pickup": "איסוף עצמי",
+            "delivery": "משלוח",
+            "deliveryPrice": "מחיר משלוח",
+            "errorAddress": "יש להזין כתובת למשלוח",
+            "errorDeliveryPrice": "יש להזין מחיר משלוח תקין",
+            "errorDeliveryPriceTooHigh": "מחיר המשלוח לא יכול לעלות על 5000{{currencySymbol}}"
+          },
+          "images": {
+              "title": "תמונות",
+              "mainImage": "תמונת מוצר",
+              "selectImage": "העלה תמונה",
+              "addMore": "הוסף תמונות",
+              "selectSource": "בחר מקור תמונה",
+              "camera": "מצלמה",
+              "gallery": "גלריה",
+              "errorRequired": "יש להעלות לפחות תמונה אחת"
+            },
+            "Review": {
+            "title": "סקירה סופית",
+            "publish": "פרסם מוצר",
+            "back": "חזור לעריכה"
+          }
+        },
+        "profile": {
+          "username": "מאור גיגי",
+          "bio": "מפתח נלהב ואוהב טכנולוגיה.",
+          "description": "ברוכים הבאים לפרופיל שלי! אני אוהב לבנות אפליקציות ולחקור טכנולוגיות חדשות. מוזמנים ליצור קשר!",
+          "editProfile": "עריכת פרופיל",
+          "logout": "התנתקות",
+          "changeTheme": "החלפת נושא",
+          "postItem":"הוספת מוצר",
+          "ChangeDir" : "החלפת שפה",
+          "stat1": {
+            "title": "עוקבים",
+            "value": "120K"
+          },
+          "stat2": {
+            "title": "נעקבים",
+            "value": "500"
+          },
+          "stat3": {
+            "title": "פוסטים",
+            "value": "240"
+          }
+        }
+       }
+  }
+}
