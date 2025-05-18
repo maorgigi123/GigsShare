@@ -7,6 +7,8 @@ import { Request, Response } from "express";
 import Listing, { IListing } from "../models/Listing";
 import cloudinary from '../config/cloudinary';
 import { UploadedFile } from 'express-fileupload';
+import mongoose from "mongoose";
+import { getExchangeRates } from '../services/exchangeService';
 
 // interface FileUploadRequest extends Request {
 //   files?: {
@@ -68,13 +70,13 @@ export const refreshToken = async (req: Request, res: Response) : Promise<any> =
 };
 export const getPaginatedListings = async (req: Request, res: Response): Promise<void> => {
   try {
-    let { page = "1", limit = "10", category } = req.query;
-
+    let { page = "1", limit = "10", category, currency = "USD" } = req.query;
+    const targetCurrency = (currency as string).toUpperCase();
+    const exchangeRates = getExchangeRates();
     const pageNumber = parseInt(page as string, 10);
     const limitNumber = parseInt(limit as string, 10);
     const skip = (pageNumber - 1) * limitNumber;
 
-    // הפוך את הקטגוריות למערך של מספרים
     let categoryFilter: number[] = [];
 
     if (category) {
@@ -82,7 +84,6 @@ export const getPaginatedListings = async (req: Request, res: Response): Promise
         categoryFilter = category.map((c) => Number(c));
       } else if (typeof category === "string") {
         try {
-          // אם זה מגיע כמחרוזת JSON (למשל '[1,2,3]')
           const parsed = JSON.parse(category);
           if (Array.isArray(parsed)) {
             categoryFilter = parsed.map((c) => Number(c));
@@ -90,7 +91,6 @@ export const getPaginatedListings = async (req: Request, res: Response): Promise
             categoryFilter = [Number(category)];
           }
         } catch {
-          // אם זה מחרוזת אחת – נניח שזה מספר יחיד
           categoryFilter = [Number(category)];
         }
       }
@@ -109,9 +109,41 @@ export const getPaginatedListings = async (req: Request, res: Response): Promise
     const totalListings = await Listing.countDocuments(filter);
     const totalPages = Math.ceil(totalListings / limitNumber);
 
+    const convertedListings = listings.map((listing) => {
+      const originalPrice = listing.pricePerHour;
+      const originalCurrency = listing.currency || 'USD';
+      let convertedPrice = originalPrice;
+
+      if (originalCurrency !== targetCurrency) {
+        const rateFrom = exchangeRates?.[originalCurrency];
+        const rateTo = exchangeRates?.[targetCurrency];
+
+        if (rateFrom && rateTo) {
+          convertedPrice = (originalPrice / rateFrom) * rateTo;
+        } else {
+          console.warn(`⚠️ Missing exchange rate for ${originalCurrency} or ${targetCurrency}`);
+        }
+      }
+
+      return {
+        ...listing.toObject(),
+        price: {
+          original: originalPrice,
+          originalCurrency,
+          converted: Math.round(convertedPrice * 100) / 100,
+          targetCurrency,
+        },
+      };
+    });
+
     res.status(200).json(
       createResponse(
-        { listings, currentPage: pageNumber, totalPages, totalListings },
+        {
+          listings: convertedListings,
+          currentPage: pageNumber,
+          totalPages,
+          totalListings,
+        },
         false,
         "Listings fetched successfully",
         0
@@ -123,8 +155,18 @@ export const getPaginatedListings = async (req: Request, res: Response): Promise
   }
 };
 
+export const getAllExchange = async (req: Request, res: Response): Promise<any> => {
+  try{
+    const exchangeRates = getExchangeRates();
 
+    console.log(exchangeRates)
+     res.status(200).json(createResponse(exchangeRates, false, "get Exchange successfully", 0));
+  }catch(error){
+    console.error("❌ getPaginatedListings error:", error);
+    res.status(500).json(createResponse(null, true, "Failed to get Exchange", 500));
+  }
 
+}
   export const createListing = async (req: Request, res: Response): Promise<any> => {
     try {
       if (!req.user?.id) {
@@ -140,6 +182,7 @@ export const getPaginatedListings = async (req: Request, res: Response): Promise
         cancellationPolicy,
         damagePolicy,
         logistics,
+        currency
       } = req.body;
       const parsedAvailability = typeof availability === 'string' ? JSON.parse(availability) : availability;
       const parsedCancellationPolicy = typeof cancellationPolicy === 'string' ? JSON.parse(cancellationPolicy) : cancellationPolicy;
@@ -178,14 +221,17 @@ export const getPaginatedListings = async (req: Request, res: Response): Promise
       if (damagePolicy?.depositAmount > 5000) {
         return res.status(400).json(createResponse(null, true, 'Deposit amount too high', 400));
       }
-  
       const listing: IListing = await Listing.create({
         title: name,
         description,
         pricePerHour: Number(pricePerHour),
+        currency,
         categories,
         images: uploadedImageUrls,
-        availability: parsedAvailability,
+         availability: {
+          default: parsedAvailability.default,
+          overrides: parsedAvailability.overrides
+        },
         cancellationPolicy: parsedCancellationPolicy,
         damagePolicy: parsedDamagePolicy,
         logistics: parsedLogistics,
@@ -196,6 +242,71 @@ export const getPaginatedListings = async (req: Request, res: Response): Promise
     } catch (error) {
       console.error(error);
       res.status(500).json(createResponse(null, true, 'Failed to create listing', 500));
+    }
+  };
+  export const getListingById = async (req: Request, res: Response): Promise<any> => {
+    try {
+      const { id } = req.params;
+      const targetCurrency = req.query.currency?.toString().toUpperCase() || 'USD';
+      const exchangeRates = getExchangeRates();
+  
+      
+      if (!id || !mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(400).json(createResponse(null, true, "Invalid listing ID", 400));
+      }
+  
+      const listing = await Listing.findById(id).populate("owner", "username email profile_image");
+  
+      if (!listing) {
+        return res.status(404).json(createResponse(null, true, "Listing not found", 404));
+      }
+  
+      const originalCurrency = listing.currency || 'USD';
+      const rateFrom = exchangeRates?.[originalCurrency];
+      const rateTo = exchangeRates?.[targetCurrency];
+  
+      const convert = (value: number): number => {
+        if (originalCurrency === targetCurrency || !rateFrom || !rateTo) return value;
+        return Math.round(((value / rateFrom) * rateTo) * 100) / 100;
+      };
+  
+      const availability = listing.availability instanceof Map
+        ? Object.fromEntries(listing.availability)
+        : listing.availability;
+  
+      const response = {
+        ...listing.toObject(),
+        availability,
+        price: {
+          original: listing.pricePerHour,
+          originalCurrency,
+          converted: convert(listing.pricePerHour),
+          targetCurrency,
+        },
+        logistics: {
+          ...listing.logistics,
+          deliveryPrice: {
+            original: listing.logistics?.deliveryPrice || 0,
+            converted: convert(listing.logistics?.deliveryPrice || 0),
+            originalCurrency,
+            targetCurrency,
+          },
+        },
+        damagePolicy: {
+          ...listing.damagePolicy,
+          depositAmount: {
+            original: listing.damagePolicy?.depositAmount || 0,
+            converted: convert(listing.damagePolicy?.depositAmount || 0),
+            originalCurrency,
+            targetCurrency,
+          },
+        },
+      };
+  
+      res.status(200).json(createResponse(response, false, "Listing fetched successfully", 0));
+    } catch (error) {
+      console.error("❌ getListingById error:", error);
+      res.status(500).json(createResponse(null, true, "Failed to fetch listing", 500));
     }
   };
   

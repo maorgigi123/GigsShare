@@ -9,10 +9,10 @@
   "data": {
     "content": {
       "languageMeta": {
+         "locale": "en-US",
         "code": "en",
         "currency": "USD",
-        "currencySymbol": "$",
-        "currencyValue": 1
+        "currencySymbol": "$"
       },
       "layout": {
         "header": {
@@ -27,6 +27,10 @@
         }
       },
       "common": {
+         "save": "Save",
+        "delete": "Delete",
+        "warning": "Warning",
+        "error": "Error",
         "next": "Next",
         "days": {
           "0": "Sunday",
@@ -35,12 +39,23 @@
           "3": "Wednesday",
           "4": "Thursday",
           "5": "Friday",
-          "6": "Saturday"
+          "6": "Saturday",
+          "short": {
+            "0": "Sun",
+            "1": "Mon",
+            "2": "Tue",
+            "3": "Wed",
+            "4": "Thu",
+            "5": "Fri",
+            "6": "Sat"
+          }
         },
         "cancel": "Cancel",
         "back": "Back",
         "yes": "Yes",
-        "no": "No"
+        "no": "No",
+        "fetchError": "Something went wrong while loading the data. Please try again.",
+        "retry": "Try again"
       },
       "explore": {
         "searchTitle": "What do you want to rent?",
@@ -58,6 +73,32 @@
         "hiking": {"id":9,"name": "Camping and Hiking", "icon": "hiking" },
         "electronics": {"id":10,"name": "Electronics", "icon": "devices" }
       },
+        "listingDetails": {
+          "availability": "🕐 Availability",
+          "noAvailability": "No availability defined",
+          "cancellationPolicy": "📅 Cancellation Policy",
+          "cancellationType": "Type: {{type}}",
+          "damagePolicy": "🔐 Damage Policy",
+          "depositAmount": "Deposit: {{amount}}",
+          "agreementRequired": "Agreement Required: {{value}}",
+          "damagePolicyText": "Terms",
+          "logistics": "🚚 Shipping & Pickup",
+          "method": "Method: {{method}}",
+          "address": "Address",
+          "deliveryPrice": "Delivery Price: {{amount}}",
+          "description": "Description",
+          "hostedBy": "Hosted by: {{name}}",
+          "hostSince": "Host since: {{date}}",
+          "reviews": "{{rating}} · {{count}} reviews",
+          "perHour": "per hour",
+          "order": "Order",
+          "orderDetails": "Order Details",
+          "price": "Price",
+          "owner": "Owner",
+          "selectTime": "Select Time",
+          "selectDate": "Select Date",
+          "proceedToOrder": "Proceed to Order"
+        },
       "HomePage": {
         "title": "Register to the Packer app"
       },
@@ -115,13 +156,20 @@
           "priceTooHigh": "Price cannot exceed 5000"
         },
         "Availability": {
-          "title": "Set Availability",
+          "title": "Set Weekly Availability",
+          "titleEdit": "Edit Availability for Selected Date",
           "optional": "Optional",
           "startHour": "Start hour",
           "endHour": "End hour",
           "allDay": "Available all day",
           "cancelAllDay": "Cancel full availability",
-          "mustSelectOneDay": "Please select at least one day with valid availability"
+          "mustSelectOneDay": "Please select at least one day with valid availability",
+          "selectDayToEdit": "Select a day to edit availability",
+          "cancelAvailability": "Cancel availability",
+          "makeAvailable": "Make available",
+          "deleteDayConfirmation": "Are you sure you want to cancel availability for this day?",
+          "timeSelectionError": "End time must be at least one hour after start time.",
+          "dateBlocked": "This date is marked as unavailable."
         },
         "Cancellation": {
           "title": "Select Cancellation Policy",
@@ -193,7 +241,13 @@
           "title": "Posts",
           "value": "240"
         }
-      }
+      },
+      "orderScheduling": {
+          "headerTitle": "Review and Proceed",
+          "dateLabel": "Date",
+          "hoursLabel": "Hours",
+          "totalPriceLabel": "Total Price"
+        }
     }
   }
-}   
+}    

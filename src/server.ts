@@ -7,7 +7,6 @@ import authRoutes from "./routes/authRoutes";
 import userRoutes from './routes/userRoutes'
 import { GetSiteContent } from "./controllers/authRoutesController";
 import fileUpload from 'express-fileupload';
-
 dotenv.config();
 
 

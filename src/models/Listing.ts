@@ -1,10 +1,8 @@
 import mongoose, { Document, Schema } from "mongoose";
 
 export interface IAvailability {
-  [day: string]: {
-    from: Date | null;
-    to: Date | null;
-  };
+  defaultAvailabilityPerDay: Record<number, { from: string | null; to: string | null }>,
+  dateOverrides: Record<string, { from: string | null; to: string | null } | 'blocked'>
 }
 
 export interface ICancellationPolicy {
@@ -37,6 +35,7 @@ export interface IListing extends Document {
   description: string;
   categories: string[];
   pricePerHour: number;
+  currency : string;
   images: string[];
   owner: mongoose.Types.ObjectId;
   available: boolean;
@@ -65,21 +64,36 @@ const ListingSchema = new Schema<IListing>(
     description: { type: String, required: true },
     categories: [{ type: Number, required: true }],
     pricePerHour: { type: Number, required: true },
+    currency : {type:String, required : false, default: "USD"},
     images: [{ type: {}, required: true }],
     owner: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
     available: { type: Boolean, default: true },
 
-    availability: {
-      type: Map,
-      of: new Schema(
-        {
-          from: { type: Date, default: null },
-          to: { type: Date, default: null },
+  availability: {
+    type: new Schema(
+      {
+        default: {
+          type: Map,
+          of: new Schema(
+            {
+              from: { type: Date, default: null },
+              to: { type: Date, default: null },
+            },
+            { _id: false }
+          ),
+          default: {},
         },
-        { _id: false }
-      ),
-      default: {},
-    },
+        overrides: {
+          type: Map,
+          of: Schema.Types.Mixed, // יכול להיות אובייקט או מחרוזת 'blocked'
+          default: {},
+        },
+      },
+      { _id: false }
+    ),
+    default: {},
+  },
+
 
     cancellationPolicy: {
       type: {

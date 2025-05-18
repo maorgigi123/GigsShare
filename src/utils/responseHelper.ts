@@ -1,4 +1,3 @@
-// src/utils/responseHelper.ts
 export interface IResponse<T> {
     data: T;
     isError: boolean;

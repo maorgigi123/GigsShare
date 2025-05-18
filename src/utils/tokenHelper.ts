@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 
 // פונקציה ליצירת JWT
 export const generateToken = (userId: string, username: string) => {
-  return jwt.sign({ id: userId, username }, process.env.JWT_SECRET as string, { expiresIn: "1m" });
+  return jwt.sign({ id: userId, username }, process.env.JWT_SECRET as string, { expiresIn: "1d" });
 };
 
 // פונקציה ליצירת refreshToken (לשמירה ממושכת)
