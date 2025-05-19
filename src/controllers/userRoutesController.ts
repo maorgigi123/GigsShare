@@ -158,8 +158,6 @@ export const getPaginatedListings = async (req: Request, res: Response): Promise
 export const getAllExchange = async (req: Request, res: Response): Promise<any> => {
   try{
     const exchangeRates = getExchangeRates();
-
-    console.log(exchangeRates)
      res.status(200).json(createResponse(exchangeRates, false, "get Exchange successfully", 0));
   }catch(error){
     console.error("❌ getPaginatedListings error:", error);
@@ -191,7 +189,6 @@ export const getAllExchange = async (req: Request, res: Response): Promise<any> 
 
       const files = req.files?.images;
       if (!files) {
-        console.log('its work 3')
         return res.status(400).json(createResponse(null, true, 'No images uploaded', 400));
       }
   

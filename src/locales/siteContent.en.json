@@ -169,7 +169,9 @@
           "makeAvailable": "Make available",
           "deleteDayConfirmation": "Are you sure you want to cancel availability for this day?",
           "timeSelectionError": "End time must be at least one hour after start time.",
-          "dateBlocked": "This date is marked as unavailable."
+          "dateBlocked": "This date is marked as unavailable.",
+          "offerToEnableWeekly": "כדי להציג את הזמינות שלך ביומן, הפעל זמינות שבועית קבועה.",
+          "enableWeekly": "הגדר זמינות שבועית"
         },
         "Cancellation": {
           "title": "Select Cancellation Policy",

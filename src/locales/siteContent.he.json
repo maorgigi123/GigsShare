@@ -170,7 +170,9 @@
             "makeAvailable": "סמן כזמין",
             "deleteDayConfirmation": "האם אתה בטוח שברצונך לבטל את הזמינות ליום זה?",
             "timeSelectionError": "שעת הסיום צריכה להיות לפחות שעה אחרי שעת ההתחלה.",
-            "dateBlocked": "תאריך זה מסומן כלא זמין."
+            "dateBlocked": "תאריך זה מסומן כלא זמין.",
+            "offerToEnableWeekly": "כדי להציג את הזמינות שלך ביומן, הפעל זמינות שבועית קבועה.",
+            "enableWeekly": "הגדר זמינות שבועית"
           },
           "Cancellation": {
             "title": "בחר מדיניות ביטול",
