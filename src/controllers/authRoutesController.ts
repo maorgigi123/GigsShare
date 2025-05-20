@@ -129,41 +129,11 @@ export const loginUser = async (req: Request, res: Response): Promise<any> => {
       user: {
         id: user._id,
         email: user.email,
-        username: user.username
+        username: user.username,
       }
     }, false, "Login successful", 0));
   } catch (error) {
     console.error(error);
     res.status(500).json(createResponse(null, true, "Login failed", 500));
-  }
-};
-
-
-
-export const checkUserAndAllowOTP = async (req: Request, res: Response): Promise<any> => {
-  try {
-    //cheack also for passowrd if user is real
-    const { phone } = req.body;
-
-    if (!phone) {
-      return res.status(400).json(createResponse(
-        null, true, "Phone number is required",400));
-    }
-
-    // חיפוש משתמש לפי מספר פלאפון
-    const user = await User.findOne({ phone });
-    if (!user) {
-      return res.status(404).json(createResponse(
-        null, true, "User not found",404));
-    }
-
-    // אם המשתמש נמצא, מחזירים אישור ללקוח לשלוח OTP
-    // res.status(200).json({ success: true, message: "User verified. Send OTP from client." });
-    return res.status(200).json(createResponse(
-       null, false, "User verified. Send OTP from client.", 0));
-
-  } catch (error) {
-    console.error("Error checking user:", error);
-    res.status(500).json(createResponse(null, true, "Internal server error", 500));
   }
 };

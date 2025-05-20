@@ -9,7 +9,7 @@
   "data": {
     "content": {
       "languageMeta": {
-         "locale": "en-US",
+        "locale": "en-US",
         "code": "en",
         "currency": "USD",
         "currencySymbol": "$"
@@ -27,7 +27,7 @@
         }
       },
       "common": {
-         "save": "Save",
+        "save": "Save",
         "delete": "Delete",
         "warning": "Warning",
         "error": "Error",
@@ -62,43 +62,83 @@
         "searchSubtitle": "Search for tools, furniture, sports equipment and more"
       },
       "categories": {
-        "trend": {"id":1,"name": "Trends", "icon": "local-fire-department" },
-        "camera": {"id":2,"name": "Photography Equipment", "icon": "camera" },
-        "sports": {"id":3,"name": "Sports Equipment", "icon": "sports-handball" },
-        "music": {"id":4,"name": "Musical Instruments", "icon": "music-note" },
-        "celebration": {"id":5,"name": "Party Accessories", "icon": "celebration" },
-        "boat": {"id":6,"name": "Boats and Water Sports", "icon": "directions-boat" },
-        "build": {"id":7,"name": "Tools and Machines", "icon": "build" },
-        "snowboard": {"id":8,"name": "Winter Sports Gear", "icon": "snowboarding" },
-        "hiking": {"id":9,"name": "Camping and Hiking", "icon": "hiking" },
-        "electronics": {"id":10,"name": "Electronics", "icon": "devices" }
-      },
-        "listingDetails": {
-          "availability": "🕐 Availability",
-          "noAvailability": "No availability defined",
-          "cancellationPolicy": "📅 Cancellation Policy",
-          "cancellationType": "Type: {{type}}",
-          "damagePolicy": "🔐 Damage Policy",
-          "depositAmount": "Deposit: {{amount}}",
-          "agreementRequired": "Agreement Required: {{value}}",
-          "damagePolicyText": "Terms",
-          "logistics": "🚚 Shipping & Pickup",
-          "method": "Method: {{method}}",
-          "address": "Address",
-          "deliveryPrice": "Delivery Price: {{amount}}",
-          "description": "Description",
-          "hostedBy": "Hosted by: {{name}}",
-          "hostSince": "Host since: {{date}}",
-          "reviews": "{{rating}} · {{count}} reviews",
-          "perHour": "per hour",
-          "order": "Order",
-          "orderDetails": "Order Details",
-          "price": "Price",
-          "owner": "Owner",
-          "selectTime": "Select Time",
-          "selectDate": "Select Date",
-          "proceedToOrder": "Proceed to Order"
+        "trend": {
+          "id": 1,
+          "name": "Trends",
+          "icon": "local-fire-department"
         },
+        "camera": {
+          "id": 2,
+          "name": "Photography Equipment",
+          "icon": "camera"
+        },
+        "sports": {
+          "id": 3,
+          "name": "Sports Equipment",
+          "icon": "sports-handball"
+        },
+        "music": {
+          "id": 4,
+          "name": "Musical Instruments",
+          "icon": "music-note"
+        },
+        "celebration": {
+          "id": 5,
+          "name": "Party Accessories",
+          "icon": "celebration"
+        },
+        "boat": {
+          "id": 6,
+          "name": "Boats and Water Sports",
+          "icon": "directions-boat"
+        },
+        "build": {
+          "id": 7,
+          "name": "Tools and Machines",
+          "icon": "build"
+        },
+        "snowboard": {
+          "id": 8,
+          "name": "Winter Sports Gear",
+          "icon": "snowboarding"
+        },
+        "hiking": {
+          "id": 9,
+          "name": "Camping and Hiking",
+          "icon": "hiking"
+        },
+        "electronics": {
+          "id": 10,
+          "name": "Electronics",
+          "icon": "devices"
+        }
+      },
+      "listingDetails": {
+        "availability": "🕐 Availability",
+        "noAvailability": "No availability defined",
+        "cancellationPolicy": "📅 Cancellation Policy",
+        "cancellationType": "Type: {{type}}",
+        "damagePolicy": "🔐 Damage Policy",
+        "depositAmount": "Deposit: {{amount}}",
+        "agreementRequired": "Agreement Required: {{value}}",
+        "damagePolicyText": "Terms",
+        "logistics": "🚚 Shipping & Pickup",
+        "method": "Method: {{method}}",
+        "address": "Address",
+        "deliveryPrice": "Delivery Price: {{amount}}",
+        "description": "Description",
+        "hostedBy": "Hosted by: {{name}}",
+        "hostSince": "Host since: {{date}}",
+        "reviews": "{{rating}} · {{count}} reviews",
+        "perHour": "per hour",
+        "order": "Order",
+        "orderDetails": "Order Details",
+        "price": "Price",
+        "owner": "Owner",
+        "selectTime": "Select Time",
+        "selectDate": "Select Date",
+        "proceedToOrder": "Proceed to Order"
+      },
       "HomePage": {
         "title": "Register to the Packer app"
       },
@@ -245,11 +285,27 @@
         }
       },
       "orderScheduling": {
-          "headerTitle": "Review and Proceed",
-          "dateLabel": "Date",
-          "hoursLabel": "Hours",
-          "totalPriceLabel": "Total Price"
-        }
+        "headerTitle": "Review and Proceed",
+        "dateLabel": "Date",
+        "hoursLabel": "Hours",
+        "totalPriceLabel": "Total Price"
+      },
+      "payment": {
+        "addCreditCard": "Add Credit Card",
+        "cardNumber": "Card Number",
+        "expiryDate": "Expiry Date (MM/YY)",
+        "cvv": "CVV"
+      },
+      "orderSummary": {
+        "title": "Order Summary",
+        "date": "Date",
+        "timeRange": "Time Range",
+        "price": "Total Price",
+        "paymentMethod": "Payment Method",
+        "confirm": "Confirm and Finish",
+        "successTitle": "Order Complete!",
+        "successMessage": "Thank you! Your order has been successfully placed."
+      }
     }
   }
-}    
+}

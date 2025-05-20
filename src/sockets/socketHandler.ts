@@ -1,12 +1,18 @@
 import { Server, Socket } from 'socket.io';
-import { handleDisconnect } from '../controllers/socketController';
+import { handleDisconnect, handleUpdateLocation } from '../controllers/socketController';
+import { withSocketAuth } from '../utils/socketAuthGuard';
 
 export const registerSocketHandlers = (socket: Socket, io: Server) => {
   console.log('Client connected:', socket.id);
 
   socket.on('disconnect', () => handleDisconnect(socket));
 
-  socket.on('connection', (socket) => {
-    console.log('✅ Client connected:', socket.id);
-});
+  socket.on('updateLocation', withSocketAuth(socket, (socket, data) => {
+    handleUpdateLocation(socket, data);
+  }));
+
+  socket.on('chatMessage', withSocketAuth(socket, (socket, message) => {
+    console.log(socket.user?.username)
+    console.log('✅ Authenticated message:', message);
+  }));
 };

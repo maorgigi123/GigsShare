@@ -1,4 +1,7 @@
+/// <reference path="./types/socket.d.ts" />
+
 import './config/cloudinary';
+import './services/firebaseMessaging'
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
@@ -10,6 +13,7 @@ import fileUpload from 'express-fileupload';
 import { createServer } from 'http';
 import { Server } from 'socket.io';
 import { registerSocketHandlers } from './sockets/socketHandler';
+import { socketAuthMiddleware } from './middleware/socketAuthMiddleware';
 
 dotenv.config();
 
@@ -38,9 +42,11 @@ const io = new Server(httpServer, {
   },
 });
 
+io.use(socketAuthMiddleware);
 io.on('connection', (socket) => {
   registerSocketHandlers(socket, io);
 });
+
 
 // חיבור למסד נתונים והפעלת השרת
 const PORT = process.env.PORT || 3001;

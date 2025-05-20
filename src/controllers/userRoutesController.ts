@@ -61,7 +61,6 @@ export const refreshToken = async (req: Request, res: Response) : Promise<any> =
     // Generate new access & refresh tokens
     const newToken = generateToken(user._id.toString(), user.username);
     const newRefreshToken = generateRefreshToken(user._id.toString());
-    
     return res.status(200).json(createResponse({ token: newToken, refreshToken: newRefreshToken }, false, "Token refreshed", 0));
   } catch (error) {
     console.error('refresh Token Failed')
@@ -306,4 +305,30 @@ export const getAllExchange = async (req: Request, res: Response): Promise<any> 
       res.status(500).json(createResponse(null, true, "Failed to fetch listing", 500));
     }
   };
+
+
+
+export const updateFcmToken = async (req: Request, res: Response) : Promise<any> => {
+  try {
+    console.log("updateFcmToken")
+    const userId = req.user?.id;
+    const { token } = req.body;
+
+    if (!userId || !token) {
+      return res.status(400).json(createResponse(null, true, "Missing token or user", 400));
+    }
+
+    const user = await User.findByIdAndUpdate(userId, { fcmToken: token }, { new: true });
+
+    if (!user) {
+      return res.status(404).json(createResponse(null, true, "User not found", 404));
+    }
+
+    return res.status(200).json(createResponse({ success: true }, false, "FCM token updated", 0));
+  } catch (error) {
+    console.error("❌ updateFcmToken error:", error);
+    res.status(500).json(createResponse(null, true, "Failed to update FCM token", 500));
+  }
+};
+
   

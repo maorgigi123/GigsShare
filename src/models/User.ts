@@ -7,8 +7,20 @@ export interface IUser extends Document {
   password: string;
   phone?: string;
   avatar?: string;
-  location?: string;
+  location: {
+  type: {
+    type: String,
+    enum: ['Point'],
+    default: 'Point',
+  },
+  coordinates: {
+    type: [Number], // [longitude, latitude]
+    required: true,
+  },
+}
+
   listings: mongoose.Types.ObjectId[];
+  fcmToken?: string;
   createdAt: Date;
 }
 
@@ -18,8 +30,19 @@ const UserSchema = new Schema<IUser>({
   password: { type: String, required: true },
   phone: { type: String },
   avatar: { type: String },
-  location: { type: String },
+  location: {
+    type: {
+      type: String,
+      enum: ['Point'],
+      default: 'Point',
+    },
+    coordinates: {
+      type: [Number], // [longitude, latitude]
+      required: true,
+    },
+  },
   listings: [{ type: mongoose.Schema.Types.ObjectId, ref: "Listing" }],
+  fcmToken: { type: String },
   createdAt: { type: Date, default: Date.now },
 });
 

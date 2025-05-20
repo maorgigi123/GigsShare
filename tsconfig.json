@@ -7,10 +7,6 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "typeRoots": ["./src/types", "./node_modules/@types"]
-    
   },
-  "include": [
-    "src/**/*.ts",
-    "src/types/**/*.d.ts"  // Add this to include custom types
-  ]
+  "include": ["src"]
 }
