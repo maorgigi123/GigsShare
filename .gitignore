@@ -44,3 +44,5 @@ coverage/
 *.spec.js
 
 .git
+
+*.json
